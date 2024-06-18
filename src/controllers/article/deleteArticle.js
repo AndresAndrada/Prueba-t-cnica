@@ -5,7 +5,6 @@ const deleteArticle = async (req, res) => {
     try {
         try {
             const articleFind = await Article.findByPk(id)
-            console.log(articleFind, 'FINDDD');
             if (articleFind.status === false) {
                 await Article.update({ status: true }, { where: { id } });
                 return res.send({ message: 'Article active', articleFind });
