@@ -18,7 +18,7 @@ const Article = (sequelize) => {
         },
         brand: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         status: {
             type: DataTypes.BOOLEAN,
