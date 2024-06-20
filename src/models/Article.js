@@ -10,7 +10,8 @@ const Article = (sequelize) => {
         },
         name_article: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         date_modification: {
             type: DataTypes.DATEONLY, // "YYYY-MM-DD"
@@ -24,6 +25,8 @@ const Article = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: true
         },
+    }, {
+        timestamps: false
     })
 };
 

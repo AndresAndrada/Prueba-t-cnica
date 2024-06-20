@@ -17,6 +17,8 @@ const User = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         }
+    }, {
+        timestamps: false
     })
 };
 

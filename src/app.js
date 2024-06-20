@@ -19,7 +19,6 @@ server.use(cookieParser());
 
 server.use('/', router)
 
-console.log(sequelize.models, 'MODELOS');
 const { Article } = sequelize.models;
 
 module.exports = server;

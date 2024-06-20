@@ -8,8 +8,8 @@ const { checkAuth } = require('../../middleware/auth');
 const articleRouter = Router();
 
 articleRouter.get('/', checkAuth, getArticle);
-articleRouter.post('/', createArticle);
-articleRouter.patch('/:id', upDataArticle);
-articleRouter.patch('/articleDelete/:id', deleteArticle);
+articleRouter.post('/', checkAuth, createArticle);
+articleRouter.patch('/:id', checkAuth, upDataArticle);
+articleRouter.patch('/delete/:id', checkAuth, deleteArticle);
 
 module.exports = articleRouter;

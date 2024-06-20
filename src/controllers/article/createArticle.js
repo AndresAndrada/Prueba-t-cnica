@@ -12,9 +12,9 @@ const createArticle = async (req, res) => {
     try {
         if (!article.name_article) return res.status(300).send({ message: 'Require name' });
         const newArticle = await Article.create(article);
-        return res.send(newArticle);
+        return res.send({ message: 'Article created successfully', newArticle });
     } catch (error) {
-        res.status(304).send({ message: error.message });
+        res.status(400).send({ message: 'The article already exists' });
     };
 };
 

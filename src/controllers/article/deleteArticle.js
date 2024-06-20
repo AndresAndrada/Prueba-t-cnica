@@ -7,11 +7,11 @@ const deleteArticle = async (req, res) => {
             const articleFind = await Article.findByPk(id)
             if (articleFind.status === false) {
                 await Article.update({ status: true }, { where: { id } });
-                return res.send({ message: 'Article active', articleFind });
+                return res.send({ message: 'Article active' });
             }
             if (articleFind.status === true) {
                 await Article.update({ status: false }, { where: { id } });
-                return res.send({ message: 'Article delete', articleFind });
+                return res.send({ message: 'Article deleted' });
             }
         } catch (error) {
             throw error;
